@@ -24,7 +24,7 @@ const Nav = ({ children }: any) => {
   };
   return (
     <Box sx={{ my: 2 }}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={ theme }>
         <Typography variant="h5">
           <Divider>
             <Link href="/">

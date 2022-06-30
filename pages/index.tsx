@@ -6,7 +6,12 @@ import Head from "next/head";
 import About from "./About";
 import Nav from "./Nav";
 import Image from "next/image";
+import { useState } from 'react'
 const Home: NextPage = () => {
+
+  const [hover, setHover] = useState<boolean>(false);
+  const [hover2, setHover2] = useState<boolean>(false);
+
   return (
     <div>
       <Head>
@@ -22,8 +27,13 @@ const Home: NextPage = () => {
 
           <Grid container>
             <Link href="/projects/trash_panda">
-              <Grid item md={6} sx={{minHeight: '20%'}}>
-                <Card sx={{ m: 2, minHeight: '43rem' }}>
+              <Grid item md={6} sx={{ minHeight: "20%" }}>
+                <Card
+                  sx={{ m: 2, minHeight: "43rem", p: 2 }}
+                  raised={hover}
+                  onMouseOver={()=> setHover(true)}
+                  onMouseOut={() => setHover(false)}
+                >
                   <Image
                     src="/images/welcome.png" // Route of the image file
                     height={500} // Desired size with correct aspect ratio
@@ -43,8 +53,12 @@ const Home: NextPage = () => {
               </Grid>
             </Link>
             <Link href="/projects/pos">
-              <Grid item md={6} >
-                <Card sx={{ m: 2, minHeight: '43rem' }}>
+              <Grid item md={6}>
+                <Card sx={{ m: 2, minHeight: "43rem", p: 2 }}
+                 raised={hover2}
+                 onMouseOver={()=> setHover2(true)}
+                 onMouseOut={() => setHover2(false)}
+                >
                   <Image
                     src="/images/Login.png" // Route of the image file
                     height={500} // Desired size with correct aspect ratio
@@ -53,7 +67,10 @@ const Home: NextPage = () => {
                   />
                   <CardContent>
                     <Typography variant="h6">Point Of Sale</Typography>
-                    <Typography paragraph>A point of sale application for a pharmacy in Panama, built with React, Bootstrap and Bulma.</Typography>
+                    <Typography paragraph>
+                      A point of sale application for a pharmacy in Panama,
+                      built with React, Bootstrap and Bulma.
+                    </Typography>
                   </CardContent>
                 </Card>
               </Grid>

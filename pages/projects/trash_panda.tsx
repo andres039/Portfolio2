@@ -16,11 +16,26 @@ const trash_panda = () => {
         <Container sx={{ my: "1rem", p: 2 }}>
           <Typography paragraph>
             {" "}
-            Trash Panda was our final project at Lighthouse labs, in a team of
-            three developers. We were able to go through many aspects of the
-            developments of the application together, however we had to somewhat
-            specialize to speed up the process.
+            An application created with the intention to reduce the amount of
+            furniture headed to the landfill in the city of Montreal. As a
+            student hub, Montreal has a large amount of useful furniture sitting
+            curbside. Trash Panda is a map based application that allows users
+            to notify others about available furniture, their details and
+            location.
           </Typography>{" "}
+          <Typography paragraph>
+            As a final project for Lighthouse Labs, Trash Panda was created in a
+            team of three developers. We were able to go through many aspects of
+            the developments of the application together, however we had to
+            somewhat specialize to speed up the process. My main contribution to
+            the project was on the backend, connecting to the database and
+            creating the endpoints that allow for the rest of the application to
+            create, update and delete records. Initially I tried to set up
+            Prisma to handle the database, but since we had a limited amount of
+            time I had to keep the system that we learned at Lighthouse Labs,
+            which was straight up PostgreSQL connected to Express with the help
+            of the PG library.
+          </Typography>
           <Card sx={{ my: 4 }}>
             <Suspense fallback={<h1>Loading...</h1>}>
               <Image
